@@ -10,7 +10,9 @@ const app = express();
 const httpServer = http.createServer(app);
 
 connectDB();
-app.use(cors()) //every origin allowed
+app.use(cors({
+  origin: '*'
+})); //every origin allowed
 // parse requests of content-type - application/json
 app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
